@@ -11,10 +11,15 @@ summary(Groceries)
 ```
  
     ## transactions as itemMatrix in sparse format with
+    
     ##  9835 rows (elements/itemsets/transactions) and
+    
     ##  169 columns (items) and a density of 0.02609146
+    
     ##
+    
     ## most frequent items:
+    
     ##       whole milk other vegetables       rolls/buns             soda
     ##             2513             1903             1809             1715
     ##           yogurt          (Other)
