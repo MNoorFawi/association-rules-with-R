@@ -6,7 +6,6 @@ Market Basket Analysis with R
  
 ``` r
 suppressMessages(library(arules))
- 
 data("Groceries")
 summary(Groceries)
 ```
@@ -47,7 +46,7 @@ ar <- apriori(Groceries,
               control = list(verbose = FALSE))
 inspect(sample(ar, 6))
 ```
- 
+
     ##     lhs                     rhs                    support confidence     lift count
     ## [1] {chicken,                                                                       
     ##      pip fruit,                                                                    
@@ -73,14 +72,12 @@ subs <- subset(ar,
 subs <- sort(subs, by = "confidence")
 subs
 ```
- 
     ## set of 16 rules
  
 ``` r
 redundant <- which(colSums(is.subset(subs, subs)) > 1)
 length(redundant)
 ```
- 
     ## [1] 2
  
 ``` r
@@ -89,7 +86,6 @@ subs <- subs[-redundant]
 recs <- unique(rhs(sort(subs, by = "lift")))
 inspect(recs)
 ```
- 
     ##     items            
     ## [1] {other vegetables}
     ## [2] {whole milk}
