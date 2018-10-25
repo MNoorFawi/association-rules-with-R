@@ -11,15 +11,10 @@ summary(Groceries)
 ```
  
     ## transactions as itemMatrix in sparse format with
-    
-    ##  9835 rows (elements/itemsets/transactions) and
-    
+    ##  9835 rows (elements/itemsets/transactions) and  
     ##  169 columns (items) and a density of 0.02609146
-    
     ##
-    
     ## most frequent items:
-    
     ##       whole milk other vegetables       rolls/buns             soda
     ##             2513             1903             1809             1715
     ##           yogurt          (Other)
@@ -53,22 +48,22 @@ inspect(sample(ar, 6))
 ```
 
     ##     lhs                     rhs                    support confidence     lift count
-    ## [1] {chicken,                                                                       
-    ##      pip fruit,                                                                    
+    ## [1] {chicken,
+    ##      pip fruit,
     ##      rolls/buns}         => {other vegetables} 0.001016777  0.6666667 3.445437    10
-    ## [2] {tropical fruit,                                                               
+    ## [2] {tropical fruit,
     ##      butter}             => {whole milk}       0.006202339  0.6224490 2.436047    61
-    ## [3] {sausage,                                                                       
-    ##      yogurt,                                                                       
+    ## [3] {sausage,
+    ##      yogurt,
     ##      frozen vegetables}  => {other vegetables} 0.001423488  0.7000000 3.617709    14
-    ## [4] {pip fruit,                                                                     
+    ## [4] {pip fruit,
     ##      baking powder}      => {whole milk}       0.001626843  0.6400000 2.504735    16
-    ## [5] {root vegetables,                                                              
-    ##      other vegetables,                                                              
+    ## [5] {root vegetables,
+    ##      other vegetables,
     ##      frozen vegetables}  => {whole milk}       0.003863752  0.6333333 2.478644    38
-    ## [6] {pip fruit,                                                                    
-    ##      root vegetables,                                                              
-    ##      whole milk,                                                                   
+    ## [6] {pip fruit,
+    ##      root vegetables
+    ##      whole milk,
     ##      whipped/sour cream} => {other vegetables} 0.001728521  0.7391304 3.819941    17
  
 ``` r
@@ -91,7 +86,7 @@ subs <- subs[-redundant]
 recs <- unique(rhs(sort(subs, by = "lift")))
 inspect(recs)
 ```
-    ##     items            
+    ##     items         
     ## [1] {other vegetables}
     ## [2] {whole milk}
  
