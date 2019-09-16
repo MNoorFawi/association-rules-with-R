@@ -3,7 +3,7 @@ library(arules)
 library(arulesViz)
 
 # to read data, it has to be of two columns
-tr <- read.transactions("data.csv", format = "single", sep = ",", cols = c(1, 2), rm.duplicates = TRUE)
+#tr <- read.transactions("data.csv", format = "single", sep = ",", cols = c(1, 2), rm.duplicates = TRUE)
 
 data("Groceries")
 items <- sample(Groceries@itemInfo$labels, 20)
