@@ -2,6 +2,9 @@ library(shiny)
 library(arules)
 library(arulesViz)
 
+# to read data, it has to be of two columns
+tr <- read.transactions("data.csv", format = "single", sep = ",", cols = c(1, 2), rm.duplicates = TRUE)
+
 data("Groceries")
 items <- sample(Groceries@itemInfo$labels, 20)
 
@@ -11,6 +14,9 @@ ar <- apriori(Groceries,
                 confidence = 0.6,
                 maxlen = 5
               ))
+
+#plot(ar, method = "graph", engine = "htmlwidget")
+#plot(ar, method = "paracoord")
 
 # redundant <- which(colSums(is.subset(ar, ar)) > 1)
 #
